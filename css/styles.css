@@ -1,97 +1,140 @@
+/* General Styling */
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: rgba(80, 71, 70, 0.53); /* Use rgba for better color management */
+  background-color: rgba(50, 50, 50, 0.8); /* Subtle darker background */
   margin: 0;
   padding: 20px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/images/recipebg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/images/recipebg.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 960px;
   margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.85); /* Slightly transparent white background */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px); /* Glassmorphism effect */
+  margin-top: 50px;
 }
 
 h1 {
   text-align: center;
   padding-bottom: 20px;
-  font-size: 2.5rem; /* Use rem for better scalability */
-  color: #ffd639;
+  font-size: 2.8rem;
+  color: #ffda44;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #ffda44, #e24e1b);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 button {
-  width: 100%; /* Make the button full width for smaller screens */
-  max-width: 300px; /* Limit the maximum width for larger screens */
-  padding: 10px;
+  width: 100%;
+  max-width: 350px; /* Better max-width */
+  padding: 15px;
   background-color: #e24e1b;
   color: white;
   border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 16px;
-  margin: 0 auto 20px; /* Center the button */
+  font-size: 18px;
+  margin: 20px auto; /* Adjust spacing */
   display: block;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
 }
 
 button:hover {
-  background-color: #218838;
-  color: #ffd639;
+  background-color: #ffda44;
+  color: #e24e1b;
 }
 
 .recipe-list {
-  padding-top: 50px;
+  padding-top: 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjusted min-width for better responsiveness */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 30px;
 }
 
 .recipe {
-  background-color: #fbaf00;
-  padding: 15px;
-  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.recipe:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
 }
 
 .recipe h2 {
   margin: 0 0 10px;
-  font-size: 1.5rem; /* Use rem for better scalability */
-  font-weight: 900;
+  font-size: 1.7rem;
+  color: #e24e1b;
+  font-weight: 700;
 }
 
 .recipe img {
   width: 100%;
-  border-radius: 4px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .recipe p {
-  margin: 5px 0;
-  color: #1d1d1d;
-  font-size: 1rem; /* Use rem for better scalability */
-  padding-bottom: 20px;
+  margin: 10px 0;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .recipe a {
   background-color: #e24e1b;
   text-decoration: none;
   border-radius: 20px;
-  padding: 8px;
+  padding: 10px 15px;
   color: white;
-  display: inline-block; /* Ensure link behaves like a button */
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
+.recipe a:hover {
+  background-color: #ffda44;
+  color: #e24e1b;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 900px) {
+  .container {
+    padding: 20px;
+  }
+
   h1 {
-    font-size: 2rem; /* Smaller font size for smaller screens */
+    font-size: 2.4rem;
   }
 
   button {
-    font-size: 14px; /* Adjust button font size */
+    font-size: 16px;
+  }
+
+  .recipe h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 14px;
   }
 
   .recipe-list {
