@@ -54,7 +54,7 @@ async function fetchRecipeList() {
       <p>${data.keywords}</p>
     `;
   }
-     recipeDiv.innerHTML += ` <a href="${data.original_video_url}">click to watch</a>
+     recipeDiv.innerHTML += ` <a href="${data.original_video_url}">Watch Here</a>
       `;
 
       //4. push each element into the resultContiainer
